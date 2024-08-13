@@ -24,8 +24,8 @@ stages:
         repository: '$(project-name-dev)/$(image-name)'
         Dockerfile: 'Dockerfile'
         tags: $(Build.BuildId)
-       # bug with latest version
-      # if you haven't spoken to Kevin Collins yet, MSFT is aware of the bug https://github.com/microsoft/azure-pipelines-tasks/issues/20189. change this line here in your repo to use the 2.240.2 Version of the docker task
+       # bug with latest version and pushing to registry
+      # MSFT is aware of the bug https://github.com/microsoft/azure-pipelines-tasks/issues/20189. change this line here in your repo to use the 2.240.2 Version of the docker task
     - task: Docker@2.240.2
       displayName: 'Push Docker image to OpenShift internal registry'
       inputs:
